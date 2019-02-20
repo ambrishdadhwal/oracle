@@ -294,3 +294,10 @@ create or replace function test1 return varchar2 is
         
         dbms_output.put_line(person2.id||'  '||person2.username);
   end;
+							
+------------ add foreign key while creating table
+create table tk_programinformation(
+primarykey number primary key,tk_program number , tk_person number , 
+constraint fk_program foreign key(tk_program) REFERENCES tk_program(primarykey),
+constraint fk_person foreign key(tk_person) REFERENCES tk_person(primarykey)
+);
